@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 8 </title>
+	<script type="text/javascript">
+		var number1;
+		var number2;
+
+		function askQuestion(){
+			document.getElementById("div1").style.visibility = 'visible';
+			number1 = Math.floor((Math.random()*10));
+			number2 = Math.floor((Math.random()*10));
+			document.getElementById("ques").innerHTML = "What is <b>"+number1+"</b> times <b>"+number2+"</b>?";
+			document.getElementById("result").focus();
+		}
+
+		function init(){
+			document.getElementById("div1").style.visibility ='hidden';
+			askQuestion();
+		}
+
+		function checkResult(){
+			var userAns = parseInt(document.getElementById("product").value);
+
+			if(userAns==(number1*number2))
+			{
+				document.getElementById("product").value = "";
+				document.getElementById("result").innerHTML  = "Very good!";
+				askQuestion();
+			}
+			else
+			{
+				document.getElementById("result").innerHTML ="Try Again!";
+			}
+		}
+	</script>
+</head>
+<body onload="init();">
+	<h1>LETS MULTIPLY!</h1>
+	<p>
+		<div id="div1">
+			<label id="ques"></label><br>
+			<input type="text" id="product">
+			<button onclick="checkResult()">Check Result</button>
+			<label id="result"></label>
+		</div>
+	</p>
+</body>
+</html>

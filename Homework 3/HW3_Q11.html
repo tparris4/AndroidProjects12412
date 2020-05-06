@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 11 </title>
+	<script type="text/javascript">
+		var number1;
+		var number2;
+		var goodStr = ['Excellent!','Very good!', 'Nice Work!', 'Keep up the good work!'];
+		var badStr = ['No. Please try again.', 'Wrong. Try once more', 'Don\'t give up!', 'No. Keep trying.'];
+		var correct;
+		var askedQuestion;
+		var incorrect;
+		var gradeLevel;
+
+
+		function askQuestion(){
+			document.getElementById("div1").style.visibility = 'visible';
+			document.getElementById("result").style.visibility='visible';
+			switch(gradeLevel){
+				case 1: number1 = Math.floor((Math.random()*10));
+						number2 = Math.floor((Math.random()*10));
+						break;
+				case 2: number1 = Math.floor((Math.random()*100));
+						number2 = Math.floor((Math.random()*100));
+						break;
+				default:number1 = Math.floor((Math.random()*1000));
+						number2 = Math.floor((Math.random()*1000));
+						break;
+			}
+			document.getElementById("ques").innerHTML = "What is <b>"+number1+"</b> times <b>"+number2+"</b>?";
+			document.getElementById("result").focus();
+			askedQuestion = askedQuestion + 1;
+		}
+
+		function init(){
+			gradeLevel = parseInt(window.prompt("What is ur grade level?"))
+			document.getElementById("div1").style.visibility ='hidden';
+			document.getElementById("result").style.visibility='hidden';
+			correct = 0;
+			askedQuestion = 0;
+			incorrect = 0;
+			askQuestion();
+		}
+
+		function checkResult(){
+			var userAns = parseInt(document.getElementById("output").value);
+			askedQuestion = askedQuestion + 1;
+			if(userAns==(number1*number2))
+			{
+				correct = correct +1;
+				var rand = Math.floor((Math.random()*4));
+				document.getElementById("output").value = "";
+				document.getElementById("result").innerHTML  = goodStr[rand];
+				askQuestion();
+			}
+			else
+			{
+				incorrect = incorrect +1;
+				var rand = Math.floor((Math.random()*4));
+				document.getElementById("result").innerHTML = badStr[rand];
+			}
+
+			if(askedQuestion > 10){
+				var percentage = correct/askedQuestion;
+				if(percentage < 0.75)
+				{
+					document.getElementById("result").innerHTML =
+					"Please ask your instructor for extra help.";
+				}
+				setTimeout(function(){
+					init();
+				}, 2000);
+
+			}
+		}
+
+	</script>
+</head>
+<body onload="init();">
+	<h1>LETS MULTIPLY!</h1>
+	<p>
+		<div id="div1">
+			<label id="ques"></label><br>
+			<input type="text" id="output">
+			<button onclick="checkResult()">Check Result</button>
+			<label id="result"></label>
+		</div>
+	</p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 5</title>
+</head>
+<script type="text/javascript">
+	var input;
+	for(var i = 0; i <5; i++){
+		input = parseInt(window.prompt("Enter a number between 1 and 30"));
+		while(input<1||input>30){
+			input = parseInt(window.prompt("Retry: Enter a number between 1 and 30"));
+		}
+		for(var j = 0; j <input; j++){
+			document.write("*");
+		}
+		document.write("<br>");
+	}
+
+
+</script>
+<body>
+
+</body>
+</html>

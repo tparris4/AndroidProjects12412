@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Questin 6</title>
+</head>
+
+<script type="text/javascript">
+	var input;
+	var qty;
+	var total=0;
+	
+	while(input!=-1){
+		qty=-1;
+		input = parseInt(window.prompt("Enter product number (-1 to quit)"));
+
+		switch(input){
+			case 1: 
+				while(qty<0){
+					qty = parseInt(window.prompt("Enter quantity sold (Can't be below 0)"));
+				}
+				total +=(qty*2.98)
+				break;
+			case 2: 
+				while(qty<0){
+					qty = parseInt(window.prompt("Enter quantity sold (Can't be below 0)"));
+				}
+				total +=(qty*4.50)
+				break;
+			case 3: 
+				while(qty<0){
+					qty = parseInt(window.prompt("Enter quantity sold (Can't be below 0)"));
+				}
+				total +=(qty*9.98)
+				break;
+			case 4: 
+				while(qty<0){
+					qty = parseInt(window.prompt("Enter quantity sold (Can't be below 0)"));			
+				}
+				total +=(qty*4.49)
+				break;
+			case 5: 
+				while(qty<0){
+					qty = parseInt(window.prompt("Enter quantity sold (Can't be below 0)"));
+				}
+				total +=(qty*6.87)
+				break;
+
+		}
+	}
+
+	document.write("<h1> Total is: $"+ total+"</h1>")
+
+
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW3 Q12</title>
+<script type="text/javascript">
+	var total = [ , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	var face1;
+	var face2;
+	for (var x = 1; x <= 36000; x++)
+	{
+		face1 = rollDie();
+		face2 = rollDie();
+		++total[face1+ face2];
+	}
+	outputResults();
+	//Execute only when call
+	function rollDie()
+	{
+		return Math.floor(1 + Math.random() * 6);
+	}
+	function outputResults()
+	{
+		document.write( "<table border = \"1\">" );
+		document.write(
+		"<tr><th width = '100'>Sum of Dice" +
+		"<th width = \"200\">Total Times Rolled</tr>" );
+		for ( var i = 2; i < total.length; i++ )
+			document.write( "<tr><td>" + i + "<td>" +
+		total[ i ] + "</tr>" );
+		document.write( "</table>" );
+	}
+		
+	</script>
+	</head>
+	<body>
+</body>
+</html>

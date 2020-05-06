@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 4</title>
+</head>
+<script type="text/javascript">
+	var j;
+	j=window.prompt("Enter a four digit number for decryption");
+	while(j.length!=4){
+		window.alert("This isn't a four digit number");
+		j=window.prompt("Enter a four digit number for decription");
+		
+	}
+
+	var initialNum = parseInt(j);
+	var preDecrypt4 = j%10;
+	j=parseInt(j/10);
+	var preDecrypt3 = j%10;
+	j=parseInt(j/10);
+	var preDecrypt2 = j%10;
+	j=parseInt(j/10);
+	var preDecrypt1 = j;
+
+	var postDecrypt4 = (preDecrypt4+3)%10;
+	var postDecrypt3 = (preDecrypt3+3)%10;
+	var postDecrypt2 = (preDecrypt2+3)%10;
+	var postDecrypt1 = (preDecrypt1+3)%10;
+
+	document.write("<h1> The intial number is "+initialNum+" and after decryption is "+postDecrypt3+postDecrypt4+postDecrypt1+postDecrypt2+".</h1>");
+
+</script>
+<body>
+
+</body>
+</html>

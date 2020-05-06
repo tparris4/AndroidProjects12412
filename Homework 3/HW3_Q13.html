@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW3 Q13</title>
+	<style type = "text/css">
+		table { width:10 em}
+		th { text-align: center}
+	</style>
+	<script type = "text/javascript">
+		var harePos = 0; 
+		var hareMovement = [0,0,9,9,-12,1,1,1,2,2];
+		var tortoisePos = 0; 
+		var tortoiseMovement = [3,3,3,3,3,-6,-6,1,1,1];
+		var track = new Array (70);
+		var intervalId;
+		for (var i = 0;i < track.length; ++i)
+			track[i] = i;
+		outputArray(track);
+
+		function outputArray(theArray)
+		{
+			document.writeln("<table border = 1> ");
+			document.writeln("<tbody><tr>");
+			var toPrint = "&nbsp;";
+			for (var i = 0; i <= theArray.length; i++)
+			{
+				toPrint = "&nbsp;";
+				if (i == tortoisePos) toPrint = "T";
+				if (i == harePos) toPrint = "H";
+				if ((i == tortoisePos) && (i == harePos)) 
+					toPrint = "OUCH!";
+				
+				document.writeln("<td>" + toPrint + "</td>");
+			}
+			document.writeln("</tr></tbody></table>");
+		}
+
+		function updateClock(){
+			movetortoisePos();
+			moveharePos();
+			if (tortoisePos > 70) tortoisePos = 70;
+			if (harePos > 70) harePos = 70;
+			outputArray(track);
+			if ((harePos == 70) || (tortoisePos == 70))
+				end();
+			else
+				intervalId = window.setInterval(updateClock(), 1000);
+		} 
+
+		function begin(){
+			document.write("<b>BANG!</b> AND THEY'RE OFF!");
+			outputArray(track);
+			intervalId = window.setInterval(updateClock(), 1000);
+		} 
+
+		function movetortoisePos(){
+			i = Math.floor(Math.random() * 10);
+			tortoisePos += tortoiseMovement[i];
+
+			if(tortoisePos <0)
+				tortoisePos = 0;
+
+			if(tortoisePos > 70)
+				tortoisePos = 70;
+		} 
+
+		function moveharePos()
+		{
+			i = Math.floor(Math.random() * 10);
+			harePos += hareMovement[i];	
+
+			if(harePos <0)
+				harePos = 0;
+
+			if(harePos > 70)
+				harePos = 70;		
+		} 
+
+	function end()
+	{
+		clearInterval(intervalId);
+		if ((tortoisePos == 70 - 1) && (harePos == 70 - 1))
+			document.write("<br/><br/><b>It's a tie.","The underdog wins</b>");
+		else {
+			if (tortoisePos == 70)
+			{
+				document.write("<br/><br/><b>Tortoise wins! Yay!</b>");
+			}
+			if (harePos == 70)
+			{
+				document.write("<br/><br/><b>Hare wins.Yuck!</b>");
+			}
+		}
+	} 
+</script>
+</head>
+<body onload="begin();">
+</body>
+</html>

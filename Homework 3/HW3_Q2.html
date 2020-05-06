@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 2</title>
+</head>
+
+<script type="text/javascript">
+	var j;
+	j=window.prompt("Enter a five digit number");
+	j=parseInt(j);
+	while(j<10000||j>99999|| isNaN(j)){
+		window.alert("This isn't a five digit number");
+		j=window.prompt("Enter a five digit number");
+		j=parseInt(j);
+	}
+
+	var digit1 = parseInt(j%10);
+	j=j/10
+	var digit2 = parseInt(j%10);
+	j=j/10
+	var digit3 = parseInt(j%10);
+	j=j/10
+	var digit4 = parseInt(j%10);
+	j=j/10
+	var digit5 = parseInt(j%10);
+
+	if(digit1==digit5 && digit2==digit4){
+		window.alert("This is a palindrome");
+	}
+	else
+		window.alert("This isn't a palindrome");
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework 3 Question 7</title>
+</head>
+<script type="text/javascript">
+
+	document.write("<textarea style=\"width:300px; height:500px;\">");
+	for(var i = 1; i <= 10000; i++){
+		if(isPrimeSqrt(i)){
+			document.write(i+" is prime! &#013;");
+		}
+		else
+			document.write(i+" is not prime! &#013;");
+	}
+	document.write("</textarea>");
+	
+	function isPrimeDiv2(x){
+		isPrime = true;
+		var count = 2;
+
+		if(x<=0)
+			return !isPrime;
+
+		if(x>0&&x<=3)
+			return isPrime;
+
+		while(count<=(x/2)){
+			if(x%count==0)
+				return !isPrime;
+			count++;
+		}
+
+		return isPrime;
+	}
+
+	function isPrimeSqrt(x){
+		isPrime = true;
+		var count = 2;
+
+		if(x<=0)
+			return !isPrime;
+
+		if(x>0&&x<=3)
+			return isPrime;
+
+		while(count<=(Math.sqrt(x))){
+			if(x%count==0)
+				return !isPrime;
+			count++;
+		}
+
+		return isPrime;
+	}
+</script>
+<body>
+</body>
+</html>
