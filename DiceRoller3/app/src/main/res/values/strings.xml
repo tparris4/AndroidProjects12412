@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Dice Roller3</string>
+    <string name="action_roll">Roll</string>
+    <string name="scoredetector">Score</string>
+    <string name="action_one">One</string>
+    <string name="action_two">Two</string>
+    <string name="action_three">Three</string>
+    <string name="action_stop">Stop</string>
+    <string name="dice_one">1</string>
+    <string name="player1score">Player 1 Score</string>
+    <string name="player2score">Player 2 Score</string>
+
+    <string name = "pick_roll_length">Roll length?</string>
+
+    <string-array name="length_array">
+        <item>Short</item>
+        <item>Medium</item>
+        <item>Long</item>
+    </string-array>
+</resources>
+
