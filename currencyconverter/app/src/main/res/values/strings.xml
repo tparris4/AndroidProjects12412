@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">currencyconverter</string>
+    <string name="Currency1">currencyconverter</string>
+    <string name="Curreny2">currencyconverter</string>
+    <string name="CurrencyConverter">currencyconverter</string>
+    <!-- strings.xml -->
+
+        <string-array name="currency_array">
+            <item>USD</item>
+            <item>Mexican Peso</item>
+            <item>Canadian Dollar</item>
+            <item>British Pound</item>
+        </string-array>
+
+</resources>

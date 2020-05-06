@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ClassOrganizer</string>
+    <string name="add">Add Class</string>
+    <string name="delete">Delete Class</string>
+    <string name="edit">Edit Class</string>
+    <string name="next">Next Class</string>
+
+    <string name="addHW">Add Homework</string>
+    <string name="deleteHW">Delete Homework</string>
+    <string name="editHW">Edit Homework</string>
+
+    <string name="HWDue">Homework DueDate</string>
+    <string name="HWDueAdd">Homework DD Add</string>
+    <string name="HWDueDel">Homework DD Delete</string>
+    <string name="HWDueEdit">Homework DD Edit</string>
+
+    <string name="create">Create</string>
+    <string name="subject">New subject?</string>
+    <string name="cancel">Cancel</string>
+</resources>
