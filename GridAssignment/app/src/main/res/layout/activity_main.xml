@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:useDefaultMargins="true"
+    android:columnCount="2"
+    tools:context="com.zybooks.gridassignment.MainActivity">
+
+    <Button
+        android:layout_column="1"
+        android:text="1"
+        android:layout_gravity="center_vertical"/>
+    <Button
+        android:layout_column="1"
+        android:text="2"
+        android:layout_gravity="bottom"/>
+    <Button
+        android:layout_column="1"
+        android:text="3"
+        android:layout_gravity="center"/>
+    <Button
+        android:layout_column="1"
+        android:text="4"
+        android:layout_gravity="right"/>
+</GridLayout>
+
